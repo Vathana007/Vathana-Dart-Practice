@@ -1,0 +1,2 @@
+D:/CADT Year3/Fundamental of Mobile Development/NewMpbile/Vathana-Dart-Practice/apple/windows/build/CMakeFiles/ALL_BUILD.dir
+D:/CADT Year3/Fundamental of Mobile Development/NewMpbile/Vathana-Dart-Practice/apple/windows/build/CMakeFiles/ZERO_CHECK.dir

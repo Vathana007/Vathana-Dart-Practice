@@ -11,7 +11,7 @@ void main() {
           color: Colors.blue[600],
           borderRadius: BorderRadius.circular(15),
         ),
-        child: Center(
+        child: const Center(
           child: Text("CADT STUDENT", 
           style: TextStyle(
             color: Colors.white,

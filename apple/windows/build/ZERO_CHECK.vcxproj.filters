@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\CADT Year3\Fundamental of Mobile Development\NewMpbile\Vathana-Dart-Practice\apple\windows\build\CMakeFiles\9ab1e8584d1db98d84e86d35e79c86c7\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{4893B2FD-BA8B-355B-A814-0B39DE7F6FF0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -5,8 +5,7 @@ class CustomCard extends StatelessWidget {
   final Color? color;
   final LinearGradient? gradient;
 
-  const CustomCard({Key? key, required this.text, this.color, this.gradient,})
-   : super(key: key);
+  const CustomCard({super.key, required this.text, this.color, this.gradient,});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +31,7 @@ class CustomCard extends StatelessWidget {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {

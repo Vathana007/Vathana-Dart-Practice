@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'gradiant_widget.dart';
 
 class Button extends StatelessWidget {
   const Button(this.text, this.start, this.end, {super.key});
@@ -10,6 +11,8 @@ class Button extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: 200,
+      height: 200,
       padding: const EdgeInsets.all(20),
       margin: const EdgeInsets.all(10),
       decoration: BoxDecoration(
@@ -17,6 +20,7 @@ class Button extends StatelessWidget {
           colors: [start, end],
         ),
         borderRadius: BorderRadius.circular(30),
+        
       ),
       child: Center(
         child: Text(
@@ -45,13 +49,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Scaffold(
+      home: const Scaffold(
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
+            children: [
               Button("HELLO 1", Color(0xff4F7EF7), Color(0xff1142BF)),
-              Button("HELLO 2", Color(0xff4F7EF7), Color(0xff1142BF)),
+              Button("HELLO 2", Color.fromARGB(255, 79, 188, 247), Color.fromARGB(255, 33, 232, 169)),
+              Button("HELLO 3", Color.fromARGB(255, 241, 60, 60), Color.fromARGB(255, 220, 244, 38)),
             ],
           ),
         ),
