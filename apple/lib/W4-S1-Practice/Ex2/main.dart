@@ -3,18 +3,19 @@ import 'package:flutter/material.dart';
 class ProductCard extends StatelessWidget {
   final String title;
   final String description;
-  final String imagePath;
+  final String image;
 
   const ProductCard({
     super.key,
     required this.title,
     required this.description,
-    required this.imagePath,
+    required this.image,
   });
 
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Colors.white,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
       ),
@@ -23,7 +24,7 @@ class ProductCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset(imagePath, width: 48, height: 48), 
+            Image.asset(image, width: 48, height: 48), 
             const SizedBox(height: 16), 
             Text(
               title,
@@ -68,7 +69,7 @@ class ProductList extends StatelessWidget {
             return ProductCard(
               title: product.title,
               description: product.description,
-              imagePath: product.imagePath,
+              image: product.imagePath,
             );
           }).toList(),
         ),

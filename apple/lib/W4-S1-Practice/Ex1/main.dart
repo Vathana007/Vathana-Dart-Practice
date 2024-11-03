@@ -6,8 +6,7 @@ class HobbyCard extends StatelessWidget {
   final IconData icon;
   final Color color;
 
-  const HobbyCard({Key? key, required this.title, required this.icon,this.color = Colors.blue, }) 
-  : super(key: key);
+  const HobbyCard({super.key, required this.title, required this.icon,this.color = Colors.blue,});
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +43,8 @@ class HobbyCard extends StatelessWidget {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -52,22 +53,20 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(title: const Text("My Hobbies"),
         ),
         body: const Padding(
-          padding: EdgeInsets.only(right: 30, left: 30),
+          padding: EdgeInsets.only(right: 40, left: 40),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              SizedBox(height: 40),
               HobbyCard(
-                title: "Football",
-                icon: Icons.sports_soccer,
-              ),
-                    HobbyCard(
                 title: "Travelling",
                 icon: Icons.travel_explore,
                 color: Colors.green,
               ),
+              SizedBox(height: 10),
               HobbyCard(
-                title: "Reading",
-                icon: Icons.book,
+                title: "Skating",
+                icon: Icons.skateboarding,
                 color: Colors.blueGrey,
               ),
             ],
