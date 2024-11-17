@@ -10,11 +10,11 @@ class Employee {
   Employee(this._name, this._baseSalary, this._address, this._yearOfExperience, this._skills);
 
   Employee.mobileDeveloper(String name, Address address, int yearsOfExperience)
-      : this._name = name,
-        this._baseSalary = 40000, 
-        this._address = address,
-        this._yearOfExperience = yearsOfExperience,
-        this._skills = [Skill.FLUTTER]; 
+      : _name = name,
+        _baseSalary = 40000, 
+        _address = address,
+        _yearOfExperience = yearsOfExperience,
+        _skills = [Skill.FLUTTER]; 
 
   double calculateSalary() {
     double salary = _baseSalary;
@@ -36,15 +36,15 @@ class Employee {
   }
 
   void printDetails() {
-    print('Employee: $_name, Base Salary: \$${_baseSalary}, Skill: $_skills, Address: $_address, YearOfExperience: $_yearOfExperience');
+    print('Employee: $_name, Base Salary: \$$_baseSalary, Skill: $_skills, Address: $_address, YearOfExperience: $_yearOfExperience');
     print('Final Salary: \$${calculateSalary()}');
   }
 
-  String get name => this._name;
-  double get baseSalary => this._baseSalary;
-  Address get address => this._address;
+  String get name => _name;
+  double get baseSalary => _baseSalary;
+  Address get address => _address;
   List<Skill> get skills => _skills;
-  int get yearOfExperience => this._yearOfExperience;
+  int get yearOfExperience => _yearOfExperience;
 
 }
 
@@ -55,9 +55,9 @@ class Address {
 
   Address(this._street, this._city, this._zipCode);
 
-  String get street => this._street;
-  String get city => this._city;
-  int get zipCode => this._zipCode;
+  String get street => _street;
+  String get city => _city;
+  int get zipCode => _zipCode;
 
   @override
   String toString() {

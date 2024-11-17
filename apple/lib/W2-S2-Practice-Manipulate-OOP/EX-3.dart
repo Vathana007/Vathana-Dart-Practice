@@ -33,15 +33,15 @@ class MyDuration {
   }
 
   bool operator > (MyDuration other) {
-    return this._milliseconds > other._milliseconds;
+    return _milliseconds > other._milliseconds;
   }
 
   MyDuration operator + (MyDuration other) {
-    return MyDuration(this._milliseconds + other._milliseconds);
+    return MyDuration(_milliseconds + other._milliseconds);
   }
 
   MyDuration operator - (MyDuration other) {
-    int result = this._milliseconds - other._milliseconds;
+    int result = _milliseconds - other._milliseconds;
     if (result < 0) {
       throw Exception('Duration cannot be negative');
     }

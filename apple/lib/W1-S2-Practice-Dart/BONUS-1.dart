@@ -38,7 +38,7 @@ void main() {
   }
 
   // Print the final position and direction
-  print("Final position: {${x},${y}} ");
+  print("Final position: {$x,$y} ");
   print("Facing: ${DirToString(direction)} ");
 }
 

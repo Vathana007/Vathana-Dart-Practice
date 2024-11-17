@@ -48,9 +48,9 @@ class Bank {
   }
 
   void listAccounts() {
-    _accounts.forEach((account) {
+    for (var account in _accounts) {
       print(account);
-    });
+    }
   }
 }
 
