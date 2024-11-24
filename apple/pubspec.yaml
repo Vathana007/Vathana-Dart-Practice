@@ -66,12 +66,8 @@ flutter:
     - assets/W4-S1-activity/
     - assets/W4-S1-Practice/
     - assets/W4-S2/
-    - assets/w4-s2/bird.jpg
-    - assets/w4-s2/bird2.jpg
-    - assets/w4-s2/insect.jpg
-    - assets/w4-s2/girl.jpg
-    - assets/w4-s2/man.jpg
     - assets/W6-S1/
+    - assets/W7-S1/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
