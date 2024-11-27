@@ -15,7 +15,7 @@ void main() {
   );
 
    Question q3 = const Question(
-    title: "Which one is programming lanquage?",
+    title: "Which one is programming language?",
     possibleAnswers: ["HTML", "CSS", "PYTHON"],
     goodAnswer: "PYTHON",
   );

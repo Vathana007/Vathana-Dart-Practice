@@ -16,15 +16,15 @@ class Answer {
 class Submissions {
   final Map<Question, Answer> _answers = {};
 
-  int getScore() {
-    int score = 0;
-    for (Answer answer in _answers.values) {
-      if (answer.isCorrect()) {
-        score++;
-      }
-    }
-    return score;
-  }
+  // int getScore() {
+  //   int score = 0;
+  //   for (Answer answer in _answers.values) {
+  //     if (answer.isCorrect()) {
+  //       score++;
+  //     }
+  //   }
+  //   return score;
+  // }
 
   Answer? getAnswerFor(Question question) {
     return _answers[question];

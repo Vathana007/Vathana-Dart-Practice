@@ -18,13 +18,14 @@ class ResultScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     int score = 0;
     for (int i = 0; i < quiz.questions.length; i++) {
-      if (quiz.questions[i].goodAnswer.toLowerCase() == userAnswers[i].toLowerCase()) {
+      if (quiz.questions[i].goodAnswer.toLowerCase() ==
+          userAnswers[i].toLowerCase()) {
         score++;
       }
     }
 
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.blue[500] as Color,
       body: SafeArea(
         child: Column(
           children: [
@@ -48,63 +49,63 @@ class ResultScreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   final question = quiz.questions[index];
                   final userAnswer = userAnswers[index];
-                  final isCorrect = userAnswer.toLowerCase() == question.goodAnswer.toLowerCase();
-
+                  final isCorrect = userAnswer.toLowerCase() ==
+                      question.goodAnswer.toLowerCase();
                   return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    padding: const EdgeInsets.symmetric(vertical: 10),
                     child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CircleAvatar(
                           radius: 16,
-                          backgroundColor: isCorrect ? Colors.green : Colors.red,
+                          backgroundColor:
+                              isCorrect ? Colors.green : Colors.red,
                           child: Text(
                             '${index + 1}',
-                            style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                            style: const TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
-                        const SizedBox(width: 16),
-
-                        // Question Card
+                        const SizedBox(width: 15),
                         Expanded(
-                          child: Card(
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                            child: Padding(
-                              padding: const EdgeInsets.all(16),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  // Question title
-                                  Text(
-                                    question.title,
-                                    style: const TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 16,
-                                      color: Colors.black,
-                                    ),
-                                  ),
-                                  const SizedBox(height: 8),
-
-                                  // Correct and User Answer
-                                  Row(
-                                    children: [
-                                      const Text('Your Answer: ', style: TextStyle(fontWeight: FontWeight.bold)),
-                                      Text(
-                                        userAnswer,
-                                        style: TextStyle(
-                                          color: isCorrect ? Colors.green : Colors.red,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      const Text('Correct Answer: ', style: TextStyle(fontWeight: FontWeight.bold)),
-                                      Text(question.goodAnswer, style: const TextStyle(color: Colors.green)),
-                                    ],
-                                  ),
-                                ],
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              // Question title
+                              Text(
+                                question.title,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                  color: Colors.black,
+                                ),
                               ),
-                            ),
+                              const SizedBox(height: 8),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children:
+                                    question.possibleAnswers.map((answer) {
+                                  Color answerColor;
+                                  if (answer == question.goodAnswer) {
+                                    answerColor = Colors.green;
+                                  } else if (answer == userAnswer) {
+                                    answerColor = Colors.red;
+                                  } else {
+                                    answerColor = Colors.black;
+                                  }
+                                  return Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 2.0),
+                                    child: Text(
+                                      answer,
+                                      style: TextStyle(
+                                          fontSize: 16.0, color: answerColor),
+                                    ),
+                                  );
+                                }).toList(),
+                              )
+                            ],
                           ),
                         ),
                       ],
