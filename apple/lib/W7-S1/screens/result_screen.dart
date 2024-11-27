@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:apple/W7-S1/model/quiz.dart';
 import 'package:apple/W7-S1/widgets/app_button.dart';
+import 'package:apple/W7-S1/model/submissions.dart';
 
 class ResultScreen extends StatelessWidget {
   final Quiz quiz;
@@ -16,11 +17,13 @@ class ResultScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final int score = quiz.questions.asMap().entries.where((entry) {
-      final question = entry.value;
-      final userAnswer = userAnswers[entry.key];
-      return userAnswer.toLowerCase() == question.goodAnswer.toLowerCase();
-    }).length;
+    final Submissions submissions = Submissions();
+    for (int i = 0; i < quiz.questions.length; i++) {
+      submissions.addAnswer(quiz.questions[i], userAnswers[i]);
+    }
+
+    //get score
+    final int score = submissions.getScore();
 
     return Scaffold(
       backgroundColor: Colors.blue[500],
