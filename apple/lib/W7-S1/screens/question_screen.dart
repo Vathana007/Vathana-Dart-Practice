@@ -35,14 +35,14 @@ class QuestionScreen extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue[200],
                     foregroundColor: Colors.grey,
-                    padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 150),
+                    padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
                     ),
                   ),
                   child: Text(
                     answer,
-                    style: const TextStyle(color: Colors.white, fontSize: 18),
+                    style: const TextStyle(color: Colors.white, fontSize: 12),
                   ),
                 ),
               );
