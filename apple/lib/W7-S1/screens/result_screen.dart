@@ -16,20 +16,19 @@ class ResultScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int score = 0;
-    for (int i = 0; i < quiz.questions.length; i++) {
-      if (quiz.questions[i].goodAnswer.toLowerCase() ==
-          userAnswers[i].toLowerCase()) {
-        score++;
-      }
-    }
+    final int score = quiz.questions.asMap().entries.where((entry) {
+      final question = entry.value;
+      final userAnswer = userAnswers[entry.key];
+      return userAnswer.toLowerCase() == question.goodAnswer.toLowerCase();
+    }).length;
 
     return Scaffold(
-      backgroundColor: Colors.blue[500] as Color,
+      backgroundColor: Colors.blue[500],
       body: SafeArea(
         child: Column(
           children: [
             const SizedBox(height: 20),
+
             // Title
             Text(
               'You answered $score out of ${quiz.questions.length}!',
@@ -51,6 +50,7 @@ class ResultScreen extends StatelessWidget {
                   final userAnswer = userAnswers[index];
                   final isCorrect = userAnswer.toLowerCase() ==
                       question.goodAnswer.toLowerCase();
+
                   return Padding(
                     padding: const EdgeInsets.symmetric(vertical: 10),
                     child: Row(
@@ -58,13 +58,13 @@ class ResultScreen extends StatelessWidget {
                       children: [
                         CircleAvatar(
                           radius: 16,
-                          backgroundColor:
-                              isCorrect ? Colors.green : Colors.red,
+                          backgroundColor: isCorrect ? Colors.green : Colors.red,
                           child: Text(
                             '${index + 1}',
                             style: const TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                         const SizedBox(width: 15),
@@ -84,8 +84,7 @@ class ResultScreen extends StatelessWidget {
                               const SizedBox(height: 8),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                children:
-                                    question.possibleAnswers.map((answer) {
+                                children: question.possibleAnswers.map((answer) {
                                   Color answerColor;
                                   if (answer == question.goodAnswer) {
                                     answerColor = Colors.green;
@@ -100,7 +99,9 @@ class ResultScreen extends StatelessWidget {
                                     child: Text(
                                       answer,
                                       style: TextStyle(
-                                          fontSize: 16.0, color: answerColor),
+                                        fontSize: 16.0,
+                                        color: answerColor,
+                                      ),
                                     ),
                                   );
                                 }).toList(),
